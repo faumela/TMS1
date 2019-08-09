@@ -1,0 +1,62 @@
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+
+driver = webdriver.Chrome("C:\\Users\\ANJUM\\Travel Management System\\Drivers\\chromedriver.exe")
+time.sleep(15)
+driver.get("https://www.phptravels.net/")
+driver.maximize_window()
+time.sleep(15)
+driver.find_element_by_xpath("//span[contains(text(),'Cars')]").click()
+time.sleep(10)
+
+#Search the Flights
+
+driver.find_element_by_xpath("//div[@id='s2id_carlocations']//a[@class='select2-choice']").click()
+time.sleep(10)
+driver.find_element_by_xpath("/html[1]/body[1]/div[18]/div[1]/input[1]").send_keys("Manchester")
+time.sleep(15)
+act = ActionChains(driver)
+act.send_keys(Keys.ENTER).perform()
+time.sleep(5)
+# driver.find_element_by_xpath("//input[@id='departcar']").send_keys("2019/07/16")
+# time.sleep(5)
+driver.find_element_by_xpath("//select[@name='pickupTime']").send_keys("01:00AM")
+time.sleep(5)
+act.send_keys(Keys.ENTER).perform()
+# driver.find_element_by_xpath("//input[@id='returncar']").send_keys("2019/07/16")
+# time.sleep(5)
+driver.find_element_by_xpath("//select[@name='dropoffTime']").send_keys("02:00PM")
+time.sleep(5)
+driver.find_element_by_xpath("//div[@class='bgfade col-md-2 form-group go-right col-xs-12 search-button']//button[@class='btn-primary btn btn-lg btn-block pfb0 loader'][contains(text(),'Search')]").click()
+time.sleep(5)
+driver.find_element_by_xpath("//button[@class='btn btn-action loader loader btn-block br25']").click()
+time.sleep(5)
+elm = driver.find_element_by_tag_name("html")
+elm.send_keys(Keys.PAGE_DOWN)
+time.sleep(5)
+elm.send_keys(Keys.PAGE_DOWN)
+time.sleep(5)
+driver.find_element_by_xpath("//button[@class='btn btn-block btn-action btn-lg']").click()
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='First Name']").send_keys("Misba")
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='Last Name']").send_keys("Shaikh")
+time.sleep(5)
+driver.find_element_by_xpath("//div[@class='col-md-5 col-xs-12']//input[@placeholder='Email']").send_keys("sabatahseen@gmail.com")
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='Confirm Email']").send_keys("sabatahseen@gmail.com")
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='Contact Number']").send_keys("9988776655")
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='Address']").send_keys("MB Nagar")
+time.sleep(5)
+driver.find_element_by_xpath("//a[@class='select2-choice']").click()
+time.sleep(5)
+driver.find_element_by_xpath("/html[1]/body[1]/div[12]/div[1]/input[1]").send_keys("India")
+time.sleep(5)
+driver.find_element_by_xpath("//button[@name='guest']").click()
+
+
+
