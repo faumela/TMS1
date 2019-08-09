@@ -57,6 +57,6 @@ time.sleep(5)
 driver.find_element_by_xpath("/html[1]/body[1]/div[12]/div[1]/input[1]").send_keys("India")
 time.sleep(5)
 driver.find_element_by_xpath("//button[@name='guest']").click()
-
+time.sleep(3)
 
 
