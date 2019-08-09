@@ -1,0 +1,28 @@
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome("C:\\Users\\ANJUM\\Demo-test\\Derivers\\chromedriver.exe")
+driver.set_page_load_timeout(20)
+driver.maximize_window()
+time.sleep(1)
+driver.get("https://www.Facebook.com")
+time.sleep(1)
+
+driver.find_element_by_xpath("//input[@id='u_0_l']").send_keys("Misba")
+time.sleep(1)
+driver.find_element_by_xpath("//input[@id='u_0_n']").send_keys("Shaikh")
+time.sleep(1)
+driver.find_element_by_xpath("//input[@id='u_0_q']").send_keys("9988667755")
+time.sleep(1)
+driver.find_element_by_xpath("//input[@id='u_0_x']").send_keys("abc1234")
+time.sleep(1)
+driver.find_element_by_xpath("//select[@id='day']").send_keys("29")
+time.sleep(1)
+driver.find_element_by_xpath("//select[@id='month']").send_keys("07")
+time.sleep(1)
+driver.find_element_by_xpath("//select[@id='year']").send_keys("1999")
+time.sleep(1)
+driver.find_element_by_xpath("//label[contains(text(),'Female')]").click()
+time.sleep(1)
+driver.find_element_by_xpath("//button[@id='u_0_15']").click()
+driver.close()
